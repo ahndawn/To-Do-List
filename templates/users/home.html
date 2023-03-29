@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  body{
+    background-image: url("/static/images/office.jpg");
+    background-repeat: no-repeat;
+  }
+  </style>
+
+    <h1 id="title" class="big">Profile</h1>
+      <h3 style="text-align: center">@{{ g.user.username }}</h3>
+    <div style="text-align: center; padding-top: 5%;">
+      <button class ="button" style="width: fit-content;"><a href="/todo/list">My To-Do List</a></button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  body{
+    background-image: url("/static/images/geometric.jpg");
+    background-repeat: no-repeat;
+  }
+  </style>
+
+  <h1>To-Do List</h1>
+  {% if todos %}
+  <div class="tableFixHead" style="margin: 0 auto; width: fit-content; padding-bottom: 3%;">
+    <table id="table">
+      <thead style="font-family: 'Ubuntu', sans-serif;">
+        <tr>
+          <th>Order</th>
+          <th>To-Do</th>
+          <th>Notes</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %}
+          <tr>
+            <form method="POST">
+              <td>
+                <input id="table-inputs" type="number" name="order" value="{{ todo.order }}" required size="2">
+              </td>
+              <td>
+                <input id="table-inputs" type="text" name="name" value="{{ todo.name }}" required size="12" {% if todo.status == 'completed' %}class="completed"{% endif %}>
+              </td>
+              <td>
+                <input id="table-inputs" type="text" name="description" value="{{ todo.description }}" {% if todo.status == 'completed' %}class="completed"{% endif %}>
+              </td>
+              <td>
+                <input id="table-inputs" type="date" name="due_date" value="{{ todo.due_date }}" required {% if todo.status == 'completed' %}class="completed"{% endif %}>
+              </td>
+              <td>
+                <select id="table-inputs" name="status">
+                  <option value="incomplete" {% if todo.status == 'incomplete' %}selected{% endif %}>Incomplete</option>
+                  <option value="completed" {% if todo.status == 'completed' %}selected{% endif %}>Completed</option>
+                </select>
+              </td>
+              <td>
+                <input type="hidden" name="todo_id" value="{{ todo.id }}">
+                <button type="submit" name="action" value="update" id="edit-btn">Save Changes<i class="fa-regular fa-pen-to-square"></i></button>
+                <button type="submit" onclick="return confirmDelete()" name="action" value="delete" id="delete-btn" name="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                {% if todo.order > 1 %}
+                  <button type="submit" name="action" value="mo=ve_up" id="arrow" name="Move Up">Move <i class="fa-solid fa-arrow-up"></i></button>
+                {% endif %}
+                {% if todo.order < todos|length %}
+                  <button type="submit" name="action" value="move_down" id="arrow" name="Move Down">Move <i class="fa-solid fa-arrow-down"></i></button>
+                {% endif %}
+              </td>
+            </form>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+  {% else %}
+    <p style="font-size: 25px; text-align: center;">No ToDo items found!</p>
+  {% endif %}
+  <br>
+  <div style="text-align: center;">
+    <button class="button"><a href="{{ url_for('create_todo') }}"> <i class="fa-solid fa-plus"></i> Create a new ToDo item</a></button>
+  </div>
+  {% endblock %}

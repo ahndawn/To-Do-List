@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Create a new ToDo item</h1>
+  <form method="POST">
+   <div class="white-background">
+    <div>
+      <h3>To-Do Name</h3>
+      <input type="text" name="name" required>
+    </div>
+    
+    <div>
+        <h3>Notes</h3>
+      <input type="text" name="description">
+    </div>
+    
+    <div>
+        <h3>Due Date</h3>
+      <input type="date" name="due_date" required>
+    </div>
+    <div>
+      
+      <h3>Status</h3>
+      <select name="status">
+        <option value="incomplete">Incomplete</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    
+    <div>
+      <h3>Priority level</h3>
+      <input type="number" name="order" required>
+    </div>
+    
+    <br>
+    <div style="padding-bottom: 2%;"><button class="button" type="submit">Create</button></div>
+   </div>
+  </form>
+{% endblock %}

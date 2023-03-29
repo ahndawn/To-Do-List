@@ -1,0 +1,218 @@
+
+
+/* when a to-do is marked as completed, change css */
+.completed {
+    color: darkgray;
+    text-decoration: line-through;
+    text-decoration-color: rgb(186, 0, 0);
+  }
+
+  /* center container for create_todo.html */
+  .newTD {
+    text-align: center;
+    padding: 10%;
+}
+
+/* add padding for form groups */
+.form-group {
+    padding: 2%;
+}
+
+/* center all forms */
+form {
+    text-align: center;
+  }
+
+
+
+/* all main headers */
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 4vw;
+    padding-bottom: 2.5%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -.18em;
+    text-decoration-color: lightskyblue;
+    text-decoration-thickness: .45em;
+  }
+
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2vw;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -.18em;
+    text-decoration-color: lightskyblue;
+    text-decoration-thickness: .45em;
+    padding-bottom: 3%;
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  text-shadow: white 2px 2px;
+}
+
+/* all links */
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: black;
+}
+
+/* todo list table */
+table {
+    background-image: url(/static/images/paper-background.jpeg);
+    background-repeat: repeat;
+    background-size: auto;
+    border: 1px solid black;
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    text-align: center;
+    vertical-align: middle;
+    table-layout: auto;
+  }
+
+  
+  /* table input areas */
+  #table-inputs {
+   outline: none;
+   border: none;
+   text-align: center;
+   background-color: transparent;
+  }
+
+  td {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: 'Caveat', cursive;;
+    font-size: 20px;
+  }
+
+  /* to-do list table header */
+thead {
+    background: linear-gradient(to bottom, rgb(131, 200, 227), rgb(18, 61, 170));
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bolder;
+    position: sticky;
+    top: 0;
+    text-shadow: black 2px 2px;
+    color: white;
+
+  }
+
+  /* trashcan button on to-do table */
+#delete-btn{
+    border: .5px solid darkblue;
+    border-radius: 5px;
+    color: black;
+    font-size: 12px;
+    background-color: white;
+  }
+  #delete-btn:hover {
+    color: red;
+    border: .5px solid red;
+    box-shadow: #333 2px 2px;
+    }
+
+/* update and move button on table */
+#edit-btn, #arrow {
+    border: none;
+    color: black;
+    border: .5px solid darkblue;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 12px;
+
+  }
+  
+  #edit-btn:hover {
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 124, 33);
+    border: .5px solid rgb(0, 124, 33);
+    box-shadow: #333 2px 2px;
+  }
+
+  #arrow:hover {
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 124, 33);
+    border: .5px solid rgb(0, 124, 33);
+    box-shadow: #333 2px 2px;
+  }
+
+  /* ////////////////////// */
+/* Navbar container */
+.navbar {
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: lightskyblue;
+  }
+
+
+/* //////////////// */
+/* basic container appearance */
+.white-background{
+    background-image: url("/static/images/white-bckg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 2%;
+    margin: 0% auto;
+}
+
+/* //////////////// */
+/* sign-in and sign-up container appearance */
+.sign-background{
+  background-image: url("/static/images/geometric.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 2%;
+  width: 65%;
+  text-align: center;
+  margin: 0% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* //////////////// */
+  /* default buttons appearance */
+.button {
+    background: linear-gradient(to top, white, rgb(156, 217, 255));
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: #333 2px 2px;
+  }
+
+.button:hover {
+    background: linear-gradient(to bottom, white, rgb(156, 217, 255));
+    cursor: pointer;
+    box-shadow: #333 3px 3px;
+  }
